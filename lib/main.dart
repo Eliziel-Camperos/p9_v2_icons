@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 20), // Espacio entre AppBar y texto
             Text(
-              "Eliziel Camperos Garcia",
+              "Eliziel Camperos Garcia 22308051281159",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 50), // Espacio entre texto y fila de iconos
