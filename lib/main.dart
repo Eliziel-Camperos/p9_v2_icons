@@ -20,44 +20,45 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 20), // Espacio entre AppBar y texto
             Text(
-              "Eliziel Camperos Garcia 22308051281159",
+              "Eliziel Camperos Garcia",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 50), // Espacio entre texto y fila de iconos
+            SizedBox(height: 50), // Espacio entre texto y filas de iconos
+
+            // Primera fila de iconos
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                // Icono 1 - Casa
-                Column(
-                  children: [
-                    Icon(Icons.home, size: 50, color: Colors.blue),
-                    SizedBox(height: 5), // Espacio entre icono y texto
-                    Text("Inicio", style: TextStyle(fontSize: 16)),
-                  ],
-                ),
+                iconWithSubtitle(Icons.home, "Inicio", Colors.blue),
+                iconWithSubtitle(Icons.star, "Favoritos", Colors.orange),
+                iconWithSubtitle(Icons.favorite, "Amor", Colors.red),
+              ],
+            ),
+            SizedBox(height: 30), // Espacio entre las filas
 
-                // Icono 2 - Estrella
-                Column(
-                  children: [
-                    Icon(Icons.star, size: 50, color: Colors.orange),
-                    SizedBox(height: 5),
-                    Text("Favoritos", style: TextStyle(fontSize: 16)),
-                  ],
-                ),
-
-                // Icono 3 - Corazón
-                Column(
-                  children: [
-                    Icon(Icons.favorite, size: 50, color: Colors.red),
-                    SizedBox(height: 5),
-                    Text("Amor", style: TextStyle(fontSize: 16)),
-                  ],
-                ),
+            // Segunda fila de iconos
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                iconWithSubtitle(Icons.person, "Perfil", Colors.green),
+                iconWithSubtitle(Icons.settings, "Ajustes", Colors.grey),
+                iconWithSubtitle(Icons.add, "Agregar", Colors.purple),
               ],
             ),
           ],
         ),
       ),
+    );
+  }
+
+  // Función para generar iconos con subtítulos
+  Widget iconWithSubtitle(IconData icon, String text, Color color) {
+    return Column(
+      children: [
+        Icon(icon, size: 50, color: color),
+        SizedBox(height: 5), // Espacio entre icono y texto
+        Text(text, style: TextStyle(fontSize: 16)),
+      ],
     );
   }
 }
